@@ -1,0 +1,49 @@
+{%extends 'SuperAdmin_index.html'%}
+{%load static%}
+{%block content%}
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">Registration Details</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-lg-0 stretch-card transparent">
+                <div class="card card-light-green" style="background-color: rgba(0, 255, 34, 0.469);">
+                    <div class="card-body ml-3 mt-3">
+                        <a style="text-decoration: none; color: inherit;" href="{% url 'SuperAdmin_Activereg' %}">
+                           <h4>Active</h4>
+                            <br>
+                            <p class="fs-30 mb-2">2</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-lg-0 stretch-card transparent">
+                <div class="card card-light-blue" style="background-color: rgba(241, 0, 0, 0.458);">
+                    <div class="card-body ml-3 mt-3 text-dark">
+                        <a style="text-decoration: none; color: inherit;" href="{% url 'SuperAdmin_Passivereg' %}">
+                            <h4> Passive</h4>
+                            <br>
+                            <p class="fs-30 mb-2">2</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+            {% endblock %}

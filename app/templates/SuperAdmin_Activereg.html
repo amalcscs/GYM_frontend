@@ -1,0 +1,183 @@
+{%extends 'SuperAdmin_index.html'%}
+{%load static%}
+{%block content%}
+
+
+
+
+<div class="row">
+    <div class="grid-margin col-lg-12 stretch-card">
+        <div class="card ">
+            <div class="card-body ">
+                <h4 class="card-title">Active Users</h4>
+                <input type="text" class="form-control text-dark" onkeyup="myFunction()" id="search" name="search" autocomplete="off"
+            placeholder="Search...">
+                <div class="table-responsive pt-3">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sl.No</th>
+                                <th> Name</th>
+                                <th>Date of Birth</th>
+                                <th>PhoneNo</th>
+                                <th>Email</th>
+                                <th>Join Date</th>
+                                <th>Physical Trainer</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                                <th>Add to PT</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="myTable">
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <img src="{% static 'face16.jpg' %}" alt="image" />
+                                    <span>&nbsp;&nbsp;Jacob</span>
+                                </td>
+                                <td>23-08-2000</td>
+                                <td>12342512</td>
+                                <td>jacob@gmail.com</td>
+                                <td>13-10-2020</td>
+                                <td>
+                                    <select class="badge badge-secondary  text-light" required>
+                                        <option value="2">Physical Trainer 1</option>
+                                        <option value="2">Physical Trainer 2</option>
+                                        <option value="3">Physical Trainer 3</option>
+                                        <option value="4">Physical Trainer 4</option>
+                                        <option value="5">Physical Trainer 5</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="badge badge-info  text-light" required>
+                                        <option value="2">Active</option>
+                                        <option value="2">Resigned</option>
+
+                                    </select>
+
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-sm btn-primary btn-icon-text">
+                                        <i class="ti-file btn-icon-prepend"></i>
+                                        Submit
+                                      </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-success btn-icon-text">
+                                        <i class="ti-plus btn-icon-prepend"></i>                                                    
+                                        Add
+                                      </button>
+                                </td>
+                                <td><a  href="{% url 'SuperAdmin_Updatereg' %}">
+                                    <button type="button" class="btn btn-sm btn-warning btn-icon-text">
+                                        <i class="ti-reload btn-icon-prepend"></i>                                                    
+                                        Update
+                                      </button></a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger btn-icon-text">
+                                        <i class="ti-trash btn-icon-prepend"></i>                                                    
+                                        Delete
+                                      </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <img src="{% static 'face12.jpg' %}" alt="image" />
+                                    <span>&nbsp;&nbsp;Manu</span>
+                                </td>
+                                <td>15-10-1998</td>
+                                <td>365777654</td>
+                                <td>Manu@gmail.com</td>
+                                <td>20-05-2021</td>
+                                <td>
+                                    <select class="badge badge-secondary  text-light" required>
+                                        <option value="2">Physical Trainer 2</option>
+                                        <option value="2">Physical Trainer 1</option>
+                                        <option value="3">Physical Trainer 3</option>
+                                        <option value="4">Physical Trainer 4</option>
+                                        <option value="5">Physical Trainer 5</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="badge badge-info  text-light" required>
+                                        <option value="2">Active</option>
+                                        <option value="2">Resigned</option>
+
+                                    </select>
+
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-sm btn-primary btn-icon-text">
+                                        <i class="ti-file btn-icon-prepend"></i>
+                                        Submit
+                                      </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-success btn-icon-text">
+                                        <i class="ti-plus btn-icon-prepend"></i>                                                    
+                                        Add
+                                      </button>
+                                </td>
+                                <td><a  href="{% url 'SuperAdmin_Updatereg' %}">
+                                    <button type="button" class="btn btn-sm btn-warning btn-icon-text">
+                                        <i class="ti-reload btn-icon-prepend"></i>                                                    
+                                        Update
+                                      </button></a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger btn-icon-text">
+                                        <i class="ti-trash btn-icon-prepend"></i>                                                    
+                                        Delete
+                                      </button>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+    function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+    $(document).ready(function () {
+        $("#search").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+
+
+</script>
+
+
+{% endblock %}

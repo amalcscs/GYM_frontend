@@ -1,0 +1,116 @@
+{%extends 'SuperAdmin_index.html'%}
+{%load static%}
+{%block content%}
+
+        <div class="row">
+            <div class="col-lg-8 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="fs-30 mb-4">Update</h4>
+
+                        <form class="forms-sample pt-1">
+                            <div class="form-group row">
+                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label" style="font-size: 17px;">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="exampleInputUsername2"
+                                        placeholder="Jacob">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputEmail2" class="col-sm-3 col-form-label" style="font-size: 17px;">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="exampleInputEmail2"
+                                        placeholder="jacob@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputMobile" class="col-sm-3 col-form-label" style="font-size: 17px;">Phone no</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="exampleInputMobile"
+                                        placeholder="9988776655">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">Date of Birth</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" id="exampleInputPassword2"
+                                        placeholder="08/05/2001">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">Age</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="exampleInputConfirmPassword2"
+                                        placeholder="22">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">Height</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="exampleInputConfirmPassword2"
+                                        placeholder="183cm">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">Weight</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="exampleInputConfirmPassword2"
+                                        placeholder="60kg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">
+                                    Address
+                                    1</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="exampleInputConfirmPassword2"
+                                        placeholder="Palakkad">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">
+                                    Address
+                                    2</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="exampleInputConfirmPassword2"
+                                        placeholder="Palakkad">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label" style="font-size: 17px;">
+                                    Address
+                                    3</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="exampleInputConfirmPassword2"
+                                        placeholder="Palakkad">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" style="font-size: 17px;">File upload</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="img[]" class="file-upload-default">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control file-upload-info" disabled
+                                            placeholder="Upload Image">
+                                        <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-primary"
+                                                type="button">Upload</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="float-right">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
