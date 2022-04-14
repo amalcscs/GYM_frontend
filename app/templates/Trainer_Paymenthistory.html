@@ -1,0 +1,90 @@
+{%extends 'Trainer_index.html'%}
+{%load static%}
+{%block content%}
+
+
+
+
+<div class="row">
+    <div class="grid-margin col-lg-12 stretch-card">
+        <div class="card ">
+            <div class="card-body ">
+                <h4 class="card-title">Payment History</h4>
+                <input type="text" class="form-control text-dark" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" style="color:white;">
+                <div class="table-responsive pt-3">
+                    <table class="table table-hover" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Sl.No</th>
+                                <th>Bank Name</th>
+                                <th>Account No.</th>
+                                <th>IFSC Code</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                
+
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr>
+                                <td>1</td>
+                                
+                                <td>Federal Bank</td>
+                                <td>1234251254</td>
+                                <td>FDRL0964</td>
+                                <td>10000</td>
+
+                                <td>13-10-2020</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                
+                                <td>State Bank of india</td>
+                                <td>65445651254</td>
+                                <td>SBI0644</td>
+                                <td>25000</td>
+
+                                <td>23-03-2022</td>
+                                
+                            </tr>
+
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+              } else {
+                  tr[i].style.display = "none";
+              }
+          }
+      }
+  }
+$(document).ready(function(){
+$('table tr').click(function(){
+  window.location = $(this).data('href');
+  return false;
+  });
+});
+</script>
+
+
+{% endblock %}
